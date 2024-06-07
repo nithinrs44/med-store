@@ -1,0 +1,113 @@
+<!-- <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Medstore</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Register Medicine</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"> Medicine Database</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav> -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary justify-content-center">
+
+    <a class="navbar-brand main-heading" href="{% url '' %}"> 
+            
+      &nbsp; Medstore
+    
+    </a>
+  
+  
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+  
+    </button>
+  
+  
+      <div class="collapse navbar-collapse text-center" id="navbarNavDropdown">
+  
+        
+        <ul class="navbar-nav mr-auto">
+  
+  
+          &nbsp;     &nbsp;     &nbsp; 
+  
+          {% if user.is_authenticated %}
+  
+            <li class="nav-item">
+        
+              <a class="nav-link" href="{% url 'dashboard' %}">Dashboard &nbsp; <i class="fa fa-home" aria-hidden="true"></i> </a>
+  
+            </li>
+  
+  
+            &nbsp;     &nbsp;     &nbsp; 
+  
+  
+            <li class="nav-item">
+  
+              <a class="nav-link" href="{% url 'logout' %}">Sign out &nbsp; <i class="fa fa-sign-out" aria-hidden="true"></i> </a>
+  
+            </li>
+
+            <li>
+
+              <form class="d-flex" action="{% url 'search' %}" method="GET">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="q">
+                <button class="btn btn-success" type="submit">Search</button>
+             </form>
+
+            </li>
+
+  
+        </ul>
+  
+        {% else %}
+  
+        <li class="nav-item">
+  
+          <a class="nav-link" href="{% url 'register' %}"> Register </a>
+  
+        </li>
+  
+  
+        &nbsp;     &nbsp;     &nbsp; 
+  
+  
+        <li class="nav-item">
+  
+          <a class="nav-link" href="{% url 'login' %}">Login</a>
+  
+        </li>
+  
+  
+        {% endif %}
+      
+        
+      </div>
+  
+  
+  </nav>

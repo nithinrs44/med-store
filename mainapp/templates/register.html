@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<body class="bg-primary">
+
+
+    <div class="container col-md-8 d-flex justify-content-center mt-5 ">
+        <div class="col bg-white">
+            {{form.errors}}
+
+            <!-- <form method="post" autocomplete="off">
+                    {% csrf_token %}
+
+
+
+                    <div class="form-group mx-5 pt-3">
+
+                        <h1 class="">Sign Up</h1>
+
+                        <p class="text-muted ">Please fill in this form to create an account</p>
+
+                        <div class="row">
+
+                            {{form|crispy}}
+                        
+                        </div><br>
+                        <div class="row justify-content-center">
+                            <div class="col">
+                                <button type="submit" class="btn btn-primary btn-block"><strong>Sign up</strong></button>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </form> -->
+
+
+            <form method="post" autocomplete="off">
+                {% csrf_token %}
+
+                <div class="form-group mx-5 pt-3">
+
+                    <h1 class="">Sign Up</h1>
+
+                    <p class="text-muted ">Please fill in this form to create an account</p>
+
+                    <div class="row">
+
+                        <div id="div_id_username" class="form-group">
+                            <label for="id_username" class=" requiredField">Username<span class="asteriskField">*</span> </label>
+                            <div> <input type="text" name="username" maxlength="150" autofocus=""
+                                    class="textinput textInput form-control" required=""
+                                    aria-describedby="id_username_helptext" id="id_username">
+                            </div>
+                        </div>
+                        <div id="div_id_password1" class="form-group">
+                             <label for="id_password1" class=" requiredField">Password<span class="asteriskField">*</span> </label>
+                            <div> <input type="password" name="password1" autocomplete="new-password"
+                                    class="textinput textInput form-control" required=""
+                                    aria-describedby="id_password1_helptext" id="id_password1">
+                            </div>
+                        </div>
+                        <div id="div_id_password2" class="form-group">
+                            <label for="id_password2" class=" requiredField">Password confirmation<span class="asteriskField">*</span> </label>
+                            <div> <input type="password" name="password2" autocomplete="new-password"
+                                    class="textinput textInput form-control" required=""
+                                    aria-describedby="id_password2_helptext" id="id_password2">
+                            </div>
+                        </div>
+
+                    </div><br>
+                    <div class="row justify-content-center">
+                        <div class="col">
+                            <button type="submit" class="btn btn-primary btn-block"><strong>Sign up</strong></button>
+                        </div>
+                    </div>
+
+
+                </div>
+            </form>
+
+
+            <br>
+        </div>
+    </div>
+    <br>
+    <div class=" col">
+        <p class="text-center text-white">Already have an account? <a class="text-light" href="{% url 'login' %}"> <u>
+                    Login here </u>
+            </a> </p>
+        <br>
+    </div>
+
+</body>
+
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- <h5> Welcome, {{user}}! 👋 </h5>
+<hr>
+<a class="btn btn-outline-primary btn-sm" href="{% url 'create-record' %}">
+    Create a new record &nbsp; <i class="fa fa-plus-circle" aria-hidden="true"></i>
+</a>
+<hr>
+<table class="table table-hover table-bordered">
+    <thead class="table-light">
+        <tr>
+            <th scope="col"> ID </th>
+            <th scope="col">Medicine_Name</th>
+            <th scope="col">Medicine_Description</th>
+            <th scope="col"> View </th>
+        </tr>
+    </thead>
+    <tbody>
+        {% if records %}
+        {% for r in records %}
+        <tr>
+            <td> {{r.id}} </td>
+            <td>{{ r.medicine_name}} :</td><br>
+            <td>{{ r.medicine_des }} </td><br>
+            <td> <a class="btn btn-success btn-sm" href="{% url 'record' r.id %}"> <i class="fa fa-eye"
+                        aria-hidden="true"></i> </a> </td>
+        </tr>
+        {% endfor %}
+        {% endif %}
+    </tbody>
+</table> -->
+
+
+<h5> Welcome, {{user}} ! 👋 </h5>
+
+<hr>
+
+<a class="btn btn-outline-primary btn-sm" href="{% url 'create-record' %}">
+    Create a new record &nbsp; <i class="fa fa-plus-circle" aria-hidden="true"></i>
+</a>
+<hr> 
+<table class="table table-hover table-bordered">
+
+    <thead class="table-light">
+        <tr>
+            <th scope="col"> ID </th>
+            <th scope="col">Medicine_Name</th>
+            <th scope="col">Medicine_Description</th>
+            <th scope="col"> View </th>
+        </tr>
+    </thead>
+    <tbody>
+        {% if records %}
+            {% for r in records %}
+            <tr>
+                <td> {{r.id}} </td>
+                <td>{{ r.medicine_name}} :</td>
+                <td>{{ r.medicine_des }} </td>
+                <td> <a class="btn btn-success btn-sm" href="{% url 'record' r.id %}"> <i class="fa fa-eye" aria-hidden="true"></i> </a> </td>
+            </tr>
+            {% endfor %}
+        {% endif %}
+    </tbody>
+</table>
+
+
+{% endblock %}
+
+
+

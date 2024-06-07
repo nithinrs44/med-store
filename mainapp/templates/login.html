@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+
+
+{% block content %}
+
+    <body class="bg-primary">
+        <div class="container col-md-8 d-flex justify-content-center mt-5 ">
+            <div class="col bg-white">
+                <form method="post" autocomplete="off">
+                    {% csrf_token %}
+                    <div class="form-group mx-5 pt-3">
+                        <h1 class="">Login</h1>
+                        <p class="text-muted ">Please fill in this form to Login</p>
+                        <div class="row">
+                            {{form|crispy}}
+                        
+                        </div><br>
+                        <div class="row justify-content-center">
+                            <div class="col">
+                                <button type="submit" class="btn btn-primary btn-block"><strong>Login</strong></button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <br>
+            </div>
+        </div>
+        <br>
+        <div class=" col">
+            <p class="text-center text-white">Don't have an account? <a class="text-light" href="{% url 'register' %}"> <u>Sign-Up</u>
+                </a> </p>
+            <br>
+        </div>
+    </body>
+
+{% endblock %}
